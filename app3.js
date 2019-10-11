@@ -54,16 +54,14 @@ logger.info('***************  http://%s:%s  ******************',host,port);
 
 var username = 'Jim';
 var orgName = 'Org1';
-logger.debug('End point : /users');
-logger.debug('User name : ' + username);
-logger.debug('Org name  : ' + orgName);
 
-let response = helper.getRegisteredUser(username, orgName, true);
-//下面这些都没有被执行，因为helper返回的response 是一个 {} 可能需要 其他的逻辑形式才能打印
-logger.debug('-- returned from registering the username %s for organization %s',username,orgName);
-if (response && typeof response !== 'string') {
-	logger.debug('Successfully registered the username %s for organization %s',username,orgName);
-	logger.debug('response :'+ response);
-} else {
-	logger.debug('Failed to register the username %s for organization %s with::%s',username,orgName,response);
-}
+var channelName = 'mychannel';
+var peers = ["peer0.org1.example.com","peer1.org1.example.com"];
+//["peer0.org1.example.com","peer1.org1.example.com"]
+logger.debug('channelName : ' + channelName);
+logger.debug('peers : ' + peers);
+logger.debug('username :' + username);
+logger.debug('orgname:' + orgName);
+
+
+let message =  await join.joinChannel(channelName, peers, username, orgName);
