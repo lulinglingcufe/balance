@@ -59,7 +59,6 @@ logger.debug('User name : ' + username);
 logger.debug('Org name  : ' + orgName);
 
 let response = helper.getRegisteredUser(username, orgName, true);
-//下面这些都没有被执行，因为helper返回的可能需要 其他的逻辑形式才能执行
 logger.debug('-- returned from registering the username %s for organization %s',username,orgName);
 if (response && typeof response !== 'string') {
 	logger.debug('Successfully registered the username %s for organization %s',username,orgName);
@@ -67,3 +66,16 @@ if (response && typeof response !== 'string') {
 } else {
 	logger.debug('Failed to register the username %s for organization %s with::%s',username,orgName,response);
 }
+
+
+
+logger.info('<<<<<<<<<<<<<<<<< C R E A T E  C H A N N E L >>>>>>>>>>>>>>>>>');
+logger.debug('End point : /channels');
+var channelName = 'mychannel';
+var channelConfigPath = '../artifacts/channel/mychannel.tx';
+logger.debug('Channel name : ' + channelName);
+logger.debug('channelConfigPath : ' + channelConfigPath); //../artifacts/channel/mychannel.tx
+
+let message = createChannel.createChannel(channelName, channelConfigPath, username, orgname);
+
+logger.debug('message: ',message);
