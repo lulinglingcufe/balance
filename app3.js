@@ -63,5 +63,4 @@ logger.debug('peers : ' + peers);
 logger.debug('username :' + username);
 logger.debug('orgname:' + orgName);
 
-
-let message =  await join.joinChannel(channelName, peers, username, orgName);
+let message =  join.joinChannel(channelName, peers, username, orgName);
