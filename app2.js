@@ -76,6 +76,6 @@ var channelConfigPath = '../artifacts/channel/mychannel.tx';
 logger.debug('Channel name : ' + channelName);
 logger.debug('channelConfigPath : ' + channelConfigPath); //../artifacts/channel/mychannel.tx
 
-let message = createChannel.createChannel(channelName, channelConfigPath, username, orgname);
+let message = createChannel.createChannel(channelName, channelConfigPath, username, orgName);
 
 logger.debug('message: ',message);
