@@ -75,4 +75,4 @@ logger.debug('chaincodeType  : ' + chaincodeType);
 logger.debug('fcn  : ' + fcn);
 logger.debug('args  : ' + args);
 
-let message = await instantiate.instantiateChaincode(peers, channelName, chaincodeName, chaincodeVersion, chaincodeType, fcn, args, username, orgName);
+let message = instantiate.instantiateChaincode(peers, channelName, chaincodeName, chaincodeVersion, chaincodeType, fcn, args, username, orgName);
